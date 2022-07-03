@@ -5,7 +5,7 @@ spring:
     active: dev
 server:
   servlet:
-    context-path: /store/api/v1
+    context-path: /users
   port: 9060
 eureka:
   client:

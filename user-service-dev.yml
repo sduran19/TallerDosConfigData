@@ -3,7 +3,7 @@ spring:
     driver-class-name: org.h2.Driver
     username: sa
     password: sa
-    url: "jdbc:h2:mem:customer;"
+    url: "jdbc:h2:mem:user;"
   h2:
     console:
       enabled: true
