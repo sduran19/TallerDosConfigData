@@ -23,9 +23,6 @@ eureka:
   client:
     service-url:
       defaultZone: http://localhost:9010/eureka/
-feign:
-  circuitbreaker:
-    enabled: true
 management:
   endpoints:
     web:
