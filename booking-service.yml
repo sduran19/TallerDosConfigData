@@ -3,6 +3,18 @@ spring:
     name: booking-service
   profiles:
     active: dev
+    boot:
+    admin:
+      client:
+        url: http://localhost:9020
+        username: admin
+        password: admin
+        instance:
+          service-base-url: http://localhost:9050
+          name: Booking API Service
+          metadata:
+            user.name: admin
+            user.password: admin
 server:
   servlet:
     context-path: /bookings
@@ -14,3 +26,11 @@ eureka:
 feign:
   circuitbreaker:
     enabled: true
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    health:
+      show-details: always
