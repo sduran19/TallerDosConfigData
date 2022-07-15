@@ -3,7 +3,7 @@ spring:
     name: movie-service
   profiles:
     active: dev
-    boot:
+  boot:
     admin:
       client:
         url: http://localhost:9020
