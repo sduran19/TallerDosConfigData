@@ -4,3 +4,26 @@ eureka:
   client:
     service-url:
       defaultZone: http://eureka-service-svc:9010/eureka/
+spring:
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+      routes:
+        - id: user-service
+          uri: lb://user-service
+          predicates:
+            - Path=/users/**
+        - id: movie-service
+          uri: lb://movie-service
+          predicates:
+            - Path=/movies/**
+        - id: showtime-service
+          uri: lb://showtime-service
+          predicates:
+            - Path=/showtime/**
+        - id: booking-service
+          uri: lb://booking-service
+          predicates:
+            - Path=/bookings/**
