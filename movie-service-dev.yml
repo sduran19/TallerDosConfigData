@@ -13,3 +13,31 @@ spring:
     defer-datasource-initialization: true
     hibernate:
       ddl-auto: create-drop
+  boot:
+    admin:
+      client:
+        url: http://localhost:9020
+        username: admin
+        password: admin
+        instance:
+          service-base-url: http://localhost:9070
+          name: Movie API Service
+          metadata:
+            user.name: admin
+            user.password: admin
+server:
+  servlet:
+    context-path: /movies
+  port: 9070
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:9010/eureka/
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    health:
+      show-details: always

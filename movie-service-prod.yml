@@ -1,0 +1,45 @@
+spring:
+  datasource:
+    driver-class-name: org.h2.Driver
+    username: sa
+    password: sa
+    url: "jdbc:h2:mem:movie;"
+  h2:
+    console:
+      enabled: true
+  jpa:
+    show-sql: true
+    database-platform: org.hibernate.dialect.H2Dialect
+    defer-datasource-initialization: true
+    hibernate:
+      ddl-auto: create-drop
+  boot:
+    admin:
+      client:
+        url: http://admin-service-svc:9020
+        username: admin
+        password: admin
+        instance:
+          service-base-url: http://movie-service:9070
+          name: Movie API Service
+          metadata:
+            user.name: admin
+            user.password: admin
+server:
+  servlet:
+    context-path: /movies
+  port: 9070
+eureka:
+  instance:
+    prefer-ip-address: true
+  client:
+    service-url:
+      defaultZone: http://eureka-service-svc:9010/eureka/
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    health:
+      show-details: always
