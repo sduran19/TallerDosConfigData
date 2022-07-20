@@ -2,8 +2,8 @@ server:
   port: 9010
 eureka:
   instance:
-    hostname: localhost
     preferIpAddress: true
+    hostname: localhost
   client:
     registerWithEureka: false
     fetchRegistry: false

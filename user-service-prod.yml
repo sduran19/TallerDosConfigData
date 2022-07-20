@@ -30,6 +30,8 @@ server:
     context-path: /users
   port: 9060
 eureka:
+  instance:
+    prefer-ip-address: true
   client:
     service-url:
       defaultZone: http://eureka-service-svc:9010/eureka/
