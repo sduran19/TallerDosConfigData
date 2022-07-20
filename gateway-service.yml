@@ -1,9 +1,6 @@
 server:
-  port: 8080
-eureka:
-  client:
-    service-url:
-      defaultZone: http://localhost:9010/eureka/
+  profiles:
+    active: prod
 spring:
   cloud:
     gateway:
